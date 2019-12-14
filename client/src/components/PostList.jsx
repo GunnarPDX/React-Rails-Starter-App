@@ -22,7 +22,7 @@ class PostList extends Component {
       return (
         <div key={post.id}>
           <br/>
-          {post.title} - {post.content}
+            {post.user_id} - {post.title} - {post.content}
           <br/>
         </div>
       )
