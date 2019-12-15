@@ -1,6 +1,8 @@
 #Readme
 * About
-    - A simple React on Rails starter app with Devise user accounts.
+    - A simple React on Rails starter app with Devise user accounts, 
+    a good starting point for your first rails/react app. Feel free to 
+    mess around with this and build on it. 
     
 * Specs
     

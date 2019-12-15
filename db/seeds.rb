@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-user = User.first || User.create(email: 'test@test.com', password: 'password', password_confirmation: 'password')
+user = User.first || User.create(username: 'Test', email: 'test@test.com', password: 'password', password_confirmation: 'password')
 posts = [
   {
     title: 'First post from db:seed',

@@ -22,7 +22,7 @@ class PostList extends Component {
       return (
         <div key={post.id}>
             <div class="comment-box">
-                <h5> <div class="comment-title">{post.title}</div> <div class="comment-info">User:</div> {post.user_id}
+                <h5> <div class="comment-title">{post.title}</div> <div class="comment-info">By:</div> {post.user.username}
                     <div className="comment-info"> Created At: </div> {post.created_at} </h5>
                 <br/>
                 {post.content}
