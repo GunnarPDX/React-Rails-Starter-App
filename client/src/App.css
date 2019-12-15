@@ -31,3 +31,39 @@
     transform: rotate(360deg);
   }
 }
+
+
+/* */
+
+.nav-bar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: coral;
+  height: 30px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  display: inline;
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 10px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
