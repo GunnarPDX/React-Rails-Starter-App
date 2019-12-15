@@ -21,9 +21,14 @@ class UserProfile extends Component {
         return this.state.posts.map(post => {
             return (
                 <div key={post.id}>
-                    <br/>
-                    {post.title} - {post.content}
-                    <br/>
+                    <div className="comment-box">
+                        <h5>
+                            <div className="comment-title">{post.title}</div>
+                            <div className="comment-info"> Created At:</div>
+                            {post.created_at} </h5>
+                        <br/>
+                        {post.content}
+                    </div>
                 </div>
             )
         })
@@ -32,7 +37,7 @@ class UserProfile extends Component {
     render() {
         return (
             <div>
-                Profile Component
+                <h2>My Posts (Profile Component)</h2>
                 {this.renderPosts()}
                 <br/>
             </div>

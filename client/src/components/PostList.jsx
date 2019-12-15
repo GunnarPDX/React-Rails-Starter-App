@@ -21,9 +21,12 @@ class PostList extends Component {
     return this.state.posts.map(post => {
       return (
         <div key={post.id}>
-          <br/>
-            {post.user_id} - {post.title} - {post.content}
-          <br/>
+            <div class="comment-box">
+                <h5> <div class="comment-title">{post.title}</div> <div class="comment-info">User:</div> {post.user_id}
+                    <div className="comment-info"> Created At: </div> {post.created_at} </h5>
+                <br/>
+                {post.content}
+            </div>
         </div>
       )
     })
@@ -32,10 +35,16 @@ class PostList extends Component {
   render() {
     return (
       <div>
-        PostList Component
-        {this.renderPosts()}
-        <br/>
-        <Link to="/posts/new">Add a New Post</Link>
+          <h2>Main Discussion (PostList Component)</h2>
+          {this.renderPosts()}
+          <br/>
+          <Link to="/posts/new">
+              <div className="new-post-button">
+                  Add a New Post
+              </div>
+          </Link>
+          <br/>
+          <br/>
       </div>
     )
   }
