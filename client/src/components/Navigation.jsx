@@ -12,17 +12,39 @@ class Navigation extends Component {
         link.click();
     };
 
+    state = {
+        current_user: []
+    };
+
+    componentDidMount() {
+        fetch('/api/v1/user')
+            .then(current_user => current_user.json())
+            .then(current_user => {
+                this.setState({
+                    current_user: current_user
+                })
+            })
+    }
+
+    renderUsername = () => {
+        return this.state.current_user.username;
+    };
+
+    rightLinkStyle = {
+        float: 'right',
+    };
 
     render() {
         return (
             <div class="nav-bar">
                 <nav>
                     <ul>
-                        <li><Link to={'/'} onClick={this.handleLogout} className="Logout">Sign Out</Link></li>
                         <li><Link to={'/'} className="nav-link">Home</Link></li>
                         <li><Link to={'/posts/new'} className="nav-link">New Post</Link></li>
                         <li><Link to={'/about'} className="nav-link">About</Link></li>
-                        <li><Link to={'/profile'} className="nav-link">Profile</Link></li>
+
+                        <li style={this.rightLinkStyle}><Link to={'/'} onClick={this.handleLogout} className="Logout">Sign Out</Link></li>
+                        <li style={this.rightLinkStyle}><Link to={'/profile'} className="profile">Signed in as.. {this.renderUsername()}</Link></li>
                     </ul>
                 </nav>
             </div>

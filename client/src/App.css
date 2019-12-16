@@ -107,8 +107,6 @@ h5 {
   border: 1px solid #3e3d3f;
   border-radius: 4px;
 
-
-
   text-align: center;
   text-decoration: none;
   color: white;
@@ -116,4 +114,8 @@ h5 {
 
 .new-post-button:hover {
   background-color: #111;
+}
+
+.profile{
+  color: coral;
 }

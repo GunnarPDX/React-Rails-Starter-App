@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :posts
       resources :profile
+      resources :user
     end
   end
   devise_for :users

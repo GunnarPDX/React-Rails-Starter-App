@@ -2,10 +2,10 @@
 
 module Api
   module V1
-    class UsersController < ApplicationController
+    class UserController < ApplicationController
       def index
         if user_signed_in?
-          render json: User.all
+          render json: current_user
         else
           render json: {}, status: 401
         end
