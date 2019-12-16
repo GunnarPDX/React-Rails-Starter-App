@@ -10,8 +10,9 @@
 user = User.first || User.create(username: 'Test', email: 'test@test.com', password: 'password', password_confirmation: 'password')
 posts = [
   {
-    title: 'First post from db:seed',
-    content: 'Hello World'
+    title: 'Seed Post',
+    content: 'Hello World! This is the default first post from db:seed',
+    time: 'database inception'
   }
 ]
 posts.each do |post_hash|
