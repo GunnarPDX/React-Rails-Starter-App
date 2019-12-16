@@ -7,6 +7,7 @@ ruby '2.6.1'
 
 gem 'rails', '5.2.3'
 
+gem 'active_model_serializers'
 gem 'coffee-rails'
 gem 'devise'
 gem 'jbuilder'
