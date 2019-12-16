@@ -59,7 +59,7 @@ li a {
   display: block;
   color: white;
   text-align: center;
-  padding: 10px 16px;
+  padding: 9px 16px;
   text-decoration: none;
 }
 
@@ -71,7 +71,7 @@ li a:hover {
 
 .comment-box{
   padding: 10px;
-  margin: 10px 25%;
+  margin: 10px auto;
   border: 1px solid #EFEFEF;
   border-radius: 4px;
   background-color: #F7F7F7;
@@ -118,4 +118,13 @@ h5 {
 
 .profile{
   color: coral;
+}
+
+.new-post-box{
+  padding: 10px;
+  margin: 10px auto;
+  border: 1px solid #EFEFEF;
+  border-radius: 4px;
+  background-color: #F7F7F7;
+  width: 25%;
 }

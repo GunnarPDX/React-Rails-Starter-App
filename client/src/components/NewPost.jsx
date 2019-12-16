@@ -37,18 +37,28 @@ class NewPost extends Component {
       });
   };
 
+  contentBoxStyle = {
+    width: '90%',
+  };
+
   render() {
     return (
       <form onSubmit={this.handleSubmit.bind(this)}>
-        <p>
-          <label htmlFor="title">Title: </label>
-          <input type="text" name="title" onChange={this.handleChange} />
-        </p>
-        <p>
-          <label htmlFor="content">Content: </label>
-          <textarea name="content" id="" cols="30" rows="10" onChange={this.handleChange}></textarea>
-        </p>
-        <input type="submit" value="Create Post" />
+        <h2>New Post</h2>
+
+        <div className="new-post-box">
+          <p>
+            <label htmlFor="title">Title: </label>
+            <br/>
+            <input type="text" name="title" onChange={this.handleChange} style={this.contentBoxStyle}/>
+          </p>
+          <p>
+            <label htmlFor="content">Content: </label>
+            <br/>
+            <textarea name="content" id="" cols="30" rows="10" onChange={this.handleChange} style={this.contentBoxStyle}/>
+          </p>
+          <input type="submit" value="Create Post" />
+        </div>
       </form>
     )
   }

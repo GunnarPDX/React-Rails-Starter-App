@@ -15,6 +15,9 @@ posts = [
     time: 'database inception'
   }
 ]
+
 posts.each do |post_hash|
   user.posts.create(post_hash)
 end
+
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
