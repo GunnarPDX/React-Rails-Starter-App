@@ -1,8 +1,8 @@
 #Readme
 * About
-    - A simple React on Rails starter app with Devise user accounts, 
-    a good starting point for your first rails/react app. Feel free to 
-    mess around with this and build on it. 
+    - A simple React on Rails starter app with Devise user accounts and
+    active admin for site management. Feel free to mess around with this
+     and build on it. 
     
 * Specs
     
@@ -11,7 +11,8 @@
     - Rails 5.2.3
     - Postgres db
     - React frontend
-    - Devise for user authentication
+    - Devise for user accounts/authentication
+    - Active_Admin for admin accounts
 
 * Setup
 
@@ -25,4 +26,5 @@
         - $ rails s
         - $ ./bin/webpack-dev-server
         
-    - -> visit http://localhost:3000/
+    --> visit http://localhost:3000/
+    --> visit http://localhost:3000/admin   (for the admin pannel)

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import { HashRouter as Router, Route } from 'react-router-dom';
-import PostList from './components/PostList';
-import NewPost from './components/NewPost';
-import About from './components/About';
-import UserProfile from "./components/UserProfile";
+import PostList from './views/PostList';
+import NewPost from './views/NewPost';
+import About from './views/About';
+import UserProfile from "./views/UserProfile";
 import Navigation from "./components/Navigation";
 
 import './App.css';

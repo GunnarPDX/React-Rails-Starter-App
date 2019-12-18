@@ -8,6 +8,7 @@
 
 
 user = User.first || User.create(username: 'Test', email: 'test@test.com', password: 'password', password_confirmation: 'password')
+
 posts = [
   {
     title: 'Seed Post',
@@ -20,4 +21,4 @@ posts.each do |post_hash|
   user.posts.create(post_hash)
 end
 
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+AdminUser.create!(email: 'admin@example.coym', password: 'password', password_confirmation: 'password') if Rails.env.development?
