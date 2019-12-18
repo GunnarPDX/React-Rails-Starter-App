@@ -13,7 +13,7 @@ module Api
 
       def create
         if user_signed_in?
-          if post = current_user.posts.create(post_params)
+          if (post = current_user.posts.create(post_params))
             post.time = Time.now.to_formatted_s(:long_ordinal)
             post.save
             render json: post, status: :created
