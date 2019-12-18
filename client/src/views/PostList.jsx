@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 class PostList extends Component {
 
   state = {
-    posts: []
+    posts: [], comments: []
   };
 
   componentDidMount() {
@@ -21,15 +21,38 @@ class PostList extends Component {
     return this.state.posts.map(post => {
       return (
         <div key={post.id}>
-            <div class="comment-box">
-                <h5> <div class="comment-title">{post.title}</div> <div class="comment-info">By:</div> {post.user.username}
-                    <div className="comment-info"> Created At: </div> {post.time} </h5>
+            <div class="post-box">
+                <h5> <div class="post-title">{post.title}</div> <div class="post-info">By:</div> {post.user.username}
+                    <div className="post-info"> Created At: </div> {post.time} </h5>
                 <br/>
                 {post.content}
             </div>
+
+            {post.comments.map(comment => {
+                return (
+                    <div key={comment.id}>
+                        <div class="comment-box">
+                            {comment.content}
+                        </div>
+                    </div>
+                )
+            })}
+
         </div>
       )
     })
+  };
+
+  renderComments = (post) => {
+      return this.state.post.comments.map(comment => {
+          return (
+              <div key={comment.id}>
+                  <div class="comment-box">
+                      {comment.content}
+                  </div>
+              </div>
+          )
+      })
   };
 
   render() {

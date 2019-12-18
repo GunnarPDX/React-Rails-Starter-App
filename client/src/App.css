@@ -69,13 +69,22 @@ li a:hover {
 
 /* */
 
-.comment-box{
+.post-box{
   padding: 10px;
   margin: 10px auto;
   border: 1px solid #EFEFEF;
   border-radius: 4px;
   background-color: #F7F7F7;
   width: 50%;
+}
+
+.comment-box{
+  padding: 10px;
+  margin: 10px auto;
+  border: 1px solid #EFEFEF;
+  border-radius: 4px;
+  background-color: #F7F7F7;
+  width: 40%;
 }
 
 h5 {
@@ -87,13 +96,13 @@ h5 {
   margin: 0;
 }
 
-.comment-title{
+.post-title{
   color: #000000;
   display: inline;
   font-weight: bold;
 }
 
-.comment-info {
+.post-info {
   color: coral;
   display: inline;
   font-weight: normal;

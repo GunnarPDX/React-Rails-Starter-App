@@ -17,8 +17,27 @@ posts = [
   }
 ]
 
+comments = [
+  {
+    content: 'test comment',
+    user_id: '1',
+    post_id: '1'
+  },
+  {
+    content: 'test comment 2',
+    user_id: '1',
+    post_id: '1'
+  }
+]
+
 posts.each do |post_hash|
+
   user.posts.create(post_hash)
+
+end
+
+comments.each do |comment_hash|
+  user.comments.create(comment_hash)
 end
 
 AdminUser.create!(email: 'admin@example.coym', password: 'password', password_confirmation: 'password') if Rails.env.development?
