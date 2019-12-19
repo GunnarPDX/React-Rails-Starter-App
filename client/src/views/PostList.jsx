@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import CommentPrompt from '../components/CommentPrompt'
 
 class PostList extends Component {
 
@@ -21,22 +22,17 @@ class PostList extends Component {
     return this.state.posts.map(post => {
       return (
         <div key={post.id}>
+
             <div class="post-box">
-                <h5> <div class="post-title">{post.title}</div> <div class="post-info">By:</div> {post.user.username}
-                    <div className="post-info"> Created At: </div> {post.time} </h5>
+                <h5> <div class="bold-title">{post.title}</div> <div class="orange-info">By:</div> {post.user.username}
+                    <div className="orange-info"> Created At: </div> {post.time} </h5>
                 <br/>
                 {post.content}
             </div>
 
-            {post.comments.map(comment => {
-                return (
-                    <div key={comment.id}>
-                        <div class="comment-box">
-                            {comment.content}
-                        </div>
-                    </div>
-                )
-            })}
+            <CommentPrompt/>
+
+            {this.renderComments(post)}
 
         </div>
       )
@@ -44,12 +40,16 @@ class PostList extends Component {
   };
 
   renderComments = (post) => {
-      return this.state.post.comments.map(comment => {
+      return post.comments.map(comment => {
           return (
               <div key={comment.id}>
+
                   <div class="comment-box">
+                      <div className="orange-info">By: </div> {comment.user_name}
+                      <br/>
                       {comment.content}
                   </div>
+
               </div>
           )
       })

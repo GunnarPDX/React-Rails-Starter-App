@@ -96,13 +96,13 @@ h5 {
   margin: 0;
 }
 
-.post-title{
+.bold-title{
   color: #000000;
   display: inline;
   font-weight: bold;
 }
 
-.post-info {
+.orange-info {
   color: coral;
   display: inline;
   font-weight: normal;

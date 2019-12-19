@@ -43,23 +43,29 @@ class NewPost extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit.bind(this)}>
-        <h2>New Post</h2>
+        <form onSubmit={this.handleSubmit.bind(this)}>
 
-        <div className="new-post-box">
-          <p>
-            <label htmlFor="title">Title: </label>
-            <br/>
-            <input type="text" name="title" onChange={this.handleChange} style={this.contentBoxStyle}/>
-          </p>
-          <p>
-            <label htmlFor="content">Content: </label>
-            <br/>
-            <textarea name="content" id="" cols="30" rows="10" onChange={this.handleChange} style={this.contentBoxStyle}/>
-          </p>
-          <input type="submit" value="Create Post" />
-        </div>
-      </form>
+            <h2>New Post</h2>
+
+            <div className="new-post-box">
+
+                <p>
+                    <label htmlFor="title">Title: </label>
+                    <br/>
+                    <input type="text" name="title" onChange={this.handleChange} style={this.contentBoxStyle}/>
+                </p>
+
+                <p>
+                    <label htmlFor="content">Content: </label>
+                    <br/>
+                    <textarea name="content" id="" cols="30" rows="10" onChange={this.handleChange} style={this.contentBoxStyle}/>
+                </p>
+
+            <input type="submit" value="Create Post" />
+
+          </div>
+
+        </form>
     )
   }
 }

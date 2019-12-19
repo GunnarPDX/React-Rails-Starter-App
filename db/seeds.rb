@@ -21,12 +21,14 @@ comments = [
   {
     content: 'test comment',
     user_id: '1',
-    post_id: '1'
+    post_id: '1',
+    time: 'N/A'
   },
   {
     content: 'test comment 2',
     user_id: '1',
-    post_id: '1'
+    post_id: '1',
+    time: 'N/A'
   }
 ]
 
