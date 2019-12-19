@@ -4,14 +4,15 @@ class CommentPrompt extends Component {
 
     state = {
         content: '',
-
+        post_id: '',
     };
 
     handleChange = e => {
         let newValue = e.target.value;
         let key = e.target.name;
         this.setState({
-            [key]: newValue
+            [key]: newValue,
+            post_id: this.props.post_id
         });
     };
 
@@ -32,6 +33,9 @@ class CommentPrompt extends Component {
         .then(resp => {
             resp.json()
         })
+        .then(comment => {
+                this.forceUpdate();
+        });
 
     };
 
@@ -44,10 +48,8 @@ class CommentPrompt extends Component {
                     <p>
 
                         <label htmlFor="content">Content: </label>
-
                         <br/>
-
-                        <textarea name="content" id="" cols="30" rows="10" onChange={this.handleChange}/>
+                        <textarea name="content" id="" cols="60" rows="5" onChange={this.handleChange}/>
 
 
                     </p>

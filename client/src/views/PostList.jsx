@@ -30,7 +30,7 @@ class PostList extends Component {
                 {post.content}
             </div>
 
-            <CommentPrompt/>
+            <CommentPrompt post_id={post.id}/>
 
             {this.renderComments(post)}
 

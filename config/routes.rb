@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :posts
       resources :profile
       resources :user
+      resources :comments
     end
   end
   devise_for :users

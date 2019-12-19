@@ -6,11 +6,12 @@ module Api
 
       def create
         if user_signed_in?
-          if (comment = Comment.create(comment_params))
+          if (comment = current_user.comments.create(comment_params))
             comment.time = Time.now.to_formatted_s(:long_ordinal)
             comment.save
+            render json: comment, status: :created
           else
-            render json: post.errors, status: 400
+            render json: comment.errors, status: 400
           end
         else
           render json: {}, status: 401
