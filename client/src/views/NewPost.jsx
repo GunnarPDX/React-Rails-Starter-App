@@ -58,7 +58,7 @@ class NewPost extends Component {
                 <p>
                     <label htmlFor="content">Content: </label>
                     <br/>
-                    <textarea name="content" id="" cols="30" rows="10" onChange={this.handleChange} style={this.contentBoxStyle}/>
+                    <textarea name="content" id="" cols="30" rows="10" onChange={this.handleChange} className="text-area"/>
                 </p>
 
             <input type="submit" value="Create Post" />

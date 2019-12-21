@@ -33,8 +33,8 @@ class CommentPrompt extends Component {
         .then(resp => {
             resp.json()
         })
-        .then(comment => {
-                this.forceUpdate();
+        .then(post => {
+                window.location.reload(false);
         });
 
     };
@@ -47,10 +47,7 @@ class CommentPrompt extends Component {
 
                     <p>
 
-                        <label htmlFor="content">Content: </label>
-                        <br/>
-                        <textarea name="content" id="" cols="60" rows="5" onChange={this.handleChange}/>
-
+                        <textarea name="content" id="" rows="5" onChange={this.handleChange} className="text-area"/>
 
                     </p>
 

@@ -1,7 +1,10 @@
 class Post < ApplicationRecord
   belongs_to :user
   has_many :comments
+
   validates :title, :content, presence: true
+
+
   # delegate :username, to: :user
   # delegate :username, to: :user, prefix: true
 

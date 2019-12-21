@@ -24,8 +24,14 @@ class PostList extends Component {
         <div key={post.id}>
 
             <div class="post-box">
-                <h5> <div class="bold-title">{post.title}</div> <div class="orange-info">By:</div> {post.user.username}
-                    <div className="orange-info"> Created At: </div> {post.time} </h5>
+                <h5>
+                    <div class="orange-info">By: {post.user.username} </div>
+                     At: {post.time}
+                </h5>
+
+                <h4>
+                    <div className="bold-title"> {post.title} </div>
+                </h4>
                 <br/>
                 {post.content}
             </div>
@@ -45,7 +51,7 @@ class PostList extends Component {
               <div key={comment.id}>
 
                   <div class="comment-box">
-                      <div className="orange-info">By: </div> {comment.user_name}
+                      <div className="orange-info">By: {comment.user_name}</div>
                       <br/>
                       {comment.content}
                   </div>

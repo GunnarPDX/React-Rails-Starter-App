@@ -9,6 +9,7 @@ gem 'rails', '5.2.3'
 
 gem 'active_model_serializers'
 gem 'activeadmin'
+gem 'acts_as_votable'
 gem 'coffee-rails'
 gem 'devise'
 gem 'jbuilder'
