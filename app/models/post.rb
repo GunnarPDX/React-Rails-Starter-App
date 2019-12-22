@@ -4,6 +4,8 @@ class Post < ApplicationRecord
 
   validates :title, :content, presence: true
 
+  is_impressionable
+
 
   # delegate :username, to: :user
   # delegate :username, to: :user, prefix: true

@@ -106,6 +106,8 @@ GEM
       activesupport (>= 4.1)
     i18n (1.7.0)
       concurrent-ruby (~> 1.0)
+    impressionist (1.6.1)
+      nokogiri (~> 1)
     inherited_resources (1.11.0)
       actionpack (>= 5.0, < 6.1)
       has_scope (~> 0.6)
@@ -258,6 +260,7 @@ DEPENDENCIES
   byebug
   coffee-rails
   devise
+  impressionist
   jbuilder
   listen (>= 3.0.5, < 3.2)
   pg

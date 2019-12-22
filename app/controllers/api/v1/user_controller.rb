@@ -14,7 +14,6 @@ module Api
 
       def posts
         if user_signed_in?
-          p 'wndnjkamca'
           render json: current_user.posts
         else
           render json: {}, status: 401

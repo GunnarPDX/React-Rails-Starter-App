@@ -3,4 +3,6 @@ class Comment < ApplicationRecord
   belongs_to :post
 
   validates :content, presence: true
+
+  is_impressionable
 end
