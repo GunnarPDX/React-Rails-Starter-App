@@ -3,10 +3,13 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   namespace :api do
     namespace :v1 do
-      resources :posts
-      resources :profile
-      resources :user
-      resources :comments
+    resources :posts, only: %i[index create]
+    resources :user, only: [:index] do
+      collection do
+        get '/posts', to: 'user#posts'
+      end
+    end
+    resources :comments, only: [:create]
     end
   end
   devise_for :users

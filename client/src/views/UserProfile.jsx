@@ -8,7 +8,7 @@ class UserProfile extends Component {
     };
 
     componentDidMount() {
-        fetch('/api/v1/profile')
+        fetch('/api/v1/user/posts')
             .then(posts => posts.json())
             .then(posts => {
                 this.setState({

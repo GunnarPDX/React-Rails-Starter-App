@@ -9,40 +9,44 @@ class PostList extends Component {
   };
 
   componentDidMount() {
-    fetch('/api/v1/posts')
+      fetch('/api/v1/posts')
+
       .then(posts => posts.json())
       .then(posts => {
-        this.setState({
-          posts: posts
-        })
+          this.setState({
+              posts: posts
+          })
       })
   }
 
   renderPosts = () => {
-    return this.state.posts.map(post => {
-      return (
-        <div key={post.id}>
+      return this.state.posts.map(post => {
+          return (
+              <div key={post.id}>
 
-            <div class="post-box">
-                <h5>
-                    <div class="orange-info">By: {post.user.username} </div>
-                     At: {post.time}
-                </h5>
+                  <div class="post-box">
 
-                <h4>
-                    <div className="bold-title"> {post.title} </div>
-                </h4>
-                <br/>
-                {post.content}
-            </div>
+                      <h5>
+                          <div class="orange-info">By: {post.user.username} </div>
+                          At: {post.time}
+                      </h5>
 
-            <CommentPrompt post_id={post.id}/>
+                      <h4>
+                          <div className="bold-title"> {post.title} </div>
+                      </h4>
 
-            {this.renderComments(post)}
+                      <br/>
+                      {post.content}
 
-        </div>
-      )
-    })
+                  </div>
+
+                  <CommentPrompt post_id={post.id}/>
+
+                  {this.renderComments(post)}
+
+              </div>
+          )
+      })
   };
 
   renderComments = (post) => {
@@ -62,21 +66,28 @@ class PostList extends Component {
   };
 
   render() {
-    return (
-      <div>
-          <h2>Main Discussion (PostList Component)</h2>
-          {this.renderPosts()}
-          <br/>
-          <Link to="/posts/new">
-              <div className="new-post-button">
-                  Add a New Post
-              </div>
-          </Link>
-          <br/>
-          <br/>
-      </div>
-    )
+      return (
+          <div>
+              <h2>
+                  Main Discussion (PostList Component)
+              </h2>
+
+              {this.renderPosts()}
+              <br/>
+
+              <Link to="/posts/new">
+                  <div className="new-post-button">
+                      Add a New Post
+                  </div>
+              </Link>
+
+              <br/>
+              <br/>
+
+          </div>
+      )
   }
+
 }
 
 export default PostList
