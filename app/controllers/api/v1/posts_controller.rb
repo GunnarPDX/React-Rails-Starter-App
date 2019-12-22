@@ -33,21 +33,18 @@ module Api
 
       def like
         if user_signed_in?
-          @post.liked_by current_user
+          if current_user.voted_for? @post
+            @post.unliked_by current_user
+          else
+            @post.liked_by current_user
+          end
           render json: {}, status: :created
         else
           render json: {}, status: 401
         end
       end
 
-      def unlike
-        if user_signed_in?
-          @post.unliked_by current_user
-          render json: {}, status: :created
-        else
-          render json: {}, status: 401
-        end
-      end
+
 
       def create
         if user_signed_in?

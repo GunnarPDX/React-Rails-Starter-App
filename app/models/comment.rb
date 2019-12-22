@@ -6,4 +6,5 @@ class Comment < ApplicationRecord
 
   is_impressionable
   acts_as_votable
+
 end

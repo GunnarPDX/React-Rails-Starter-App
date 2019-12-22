@@ -6,7 +6,6 @@ Rails.application.routes.draw do
     resources :posts, only: %i[index create show] do
       collection do
         put '/like/:id', to: 'posts#like'
-        put '/unlike/:id', to: 'posts#unlike'
       end
     end
     resources :user, only: [:index] do

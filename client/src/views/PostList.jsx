@@ -24,27 +24,32 @@ class PostList extends Component {
       return this.state.posts.map(post => {
           return (
               <div key={post.id}>
+                  <div className="post-container">
 
-                  <div class="post-box">
+                      <div className="post-box">
 
-                      <h5>
-                          <div class="orange-info">By: {post.user.username} </div>
-                          At: {post.time}
-                      </h5>
+                          <h5>
+                              <div className="orange-info">By: {post.user.username} </div>
+                              At: {post.time}
+                          </h5>
 
-                      <h4>
-                          <div className="bold-title"> {post.title} </div>
-                      </h4>
+                          <h4>
+                              <div className="bold-title"> {post.title} </div>
+                          </h4>
 
-                      <br/>
-                      {post.content}
+                          <br/>
+                          {post.content}
+                          <br/>
+                          <br/>
+                          Likes: {post.likes}
+                          <PostLike post_id={post.id} likes={post.likes}/>
+
+                      </div>
+
+                      <CommentPrompt post_id={post.id}/>
+                      {this.renderComments(post)}
 
                   </div>
-
-                  <PostLike post_id={post.id}/>
-                  <CommentPrompt post_id={post.id}/>
-
-                  {this.renderComments(post)}
 
               </div>
           )

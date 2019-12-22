@@ -69,13 +69,22 @@ li a:hover {
 
 /* */
 
+.post-container{
+  padding: 10px;
+  margin: 10px auto;
+  border: 1px solid #EFEFEF;
+  border-radius: 4px;
+  background-color: #f7fcfc;
+  width: 50%;
+}
+
 .post-box{
   padding: 10px;
   margin: 10px auto;
   border: 1px solid #EFEFEF;
   border-radius: 4px;
   background-color: #F7F7F7;
-  width: 50%;
+  width: 95%;
 }
 
 .comment-box{
@@ -84,7 +93,7 @@ li a:hover {
   border: 1px solid #EFEFEF;
   border-radius: 4px;
   background-color: #F7F7F7;
-  width: 40%;
+  width: 70%;
 }
 
 h5 {
@@ -135,7 +144,7 @@ h5 {
   border: 1px solid #EFEFEF;
   border-radius: 4px;
   background-color: #F7F7F7;
-  width: 40%;
+  width: 95%;
 }
 
 .text-area{

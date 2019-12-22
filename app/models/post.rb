@@ -7,6 +7,9 @@ class Post < ApplicationRecord
   is_impressionable
   acts_as_votable
 
+  def likes
+    self.get_likes.size
+  end
 
   # delegate :username, to: :user
   # delegate :username, to: :user, prefix: true
