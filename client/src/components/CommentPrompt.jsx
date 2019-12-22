@@ -57,7 +57,7 @@ class CommentPrompt extends Component {
 
             </form>
         )
-     }
+    }
 
 }
 export default CommentPrompt

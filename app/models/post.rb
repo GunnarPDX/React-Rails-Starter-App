@@ -5,6 +5,7 @@ class Post < ApplicationRecord
   validates :title, :content, presence: true
 
   is_impressionable
+  acts_as_votable
 
 
   # delegate :username, to: :user

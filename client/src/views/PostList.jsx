@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import CommentPrompt from '../components/CommentPrompt'
+import PostLike from '../components/PostLike'
 
 class PostList extends Component {
 
@@ -40,6 +41,7 @@ class PostList extends Component {
 
                   </div>
 
+                  <PostLike post_id={post.id}/>
                   <CommentPrompt post_id={post.id}/>
 
                   {this.renderComments(post)}

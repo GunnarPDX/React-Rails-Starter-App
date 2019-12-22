@@ -3,7 +3,12 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   namespace :api do
     namespace :v1 do
-    resources :posts, only: %i[index create]
+    resources :posts, only: %i[index create show] do
+      collection do
+        put '/like/:id', to: 'posts#like'
+        put '/unlike/:id', to: 'posts#unlike'
+      end
+    end
     resources :user, only: [:index] do
       collection do
         get '/posts', to: 'user#posts'

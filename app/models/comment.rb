@@ -5,4 +5,5 @@ class Comment < ApplicationRecord
   validates :content, presence: true
 
   is_impressionable
+  acts_as_votable
 end
