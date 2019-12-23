@@ -36,7 +36,7 @@ class Navigation extends Component {
 
     render() {
         return (
-            <div class="nav-bar">
+            <div className="nav-bar">
                 <nav>
                     <ul>
                         <li><Link to={'/'} className="nav-link">Home</Link></li>

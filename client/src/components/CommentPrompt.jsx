@@ -47,7 +47,7 @@ class CommentPrompt extends Component {
 
                     <p>
 
-                        <textarea name="content" id="" rows="5" onChange={this.handleChange} className="text-area"/>
+                        <textarea name="content" rows="5" onChange={this.handleChange} className="text-area"/>
 
                     </p>
 

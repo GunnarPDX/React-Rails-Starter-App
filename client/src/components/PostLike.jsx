@@ -2,8 +2,12 @@ import React, { Component } from 'react'
 
 class PostLike extends Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
+        this.state = {
+            liked: this.props.liked,
+            likes: this.props.likes,
+        };
         this.handleClick = this.handleClick.bind(this);
     }
 
@@ -20,13 +24,28 @@ class PostLike extends Component {
             redirect: "error"
         })
             .then(res => res.text())
-            .then(res => console.log(res))
+            .then(res => console.log(res));
+
+        if(this.state.liked === "liked"){
+            this.setState({
+                likes: --this.state.likes,
+                liked: "unliked"
+            });
+        }
+        else{
+            this.setState({
+                likes: ++this.state.likes,
+                liked: "liked"
+            });
+        }
     }
 
     render() {
+        const label = this.state.liked === "liked" ? "unlike" : "like";
+        const likes = this.state.likes;
         return (
             <div>
-                <button className="btn btn-primary" onClick={this.handleClick}>like</button>
+                <button className="btn btn-primary" onClick={this.handleClick}>{label}</button> : {likes}
             </div>
         )
     }

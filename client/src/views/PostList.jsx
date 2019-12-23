@@ -11,16 +11,16 @@ class PostList extends Component {
 
   componentDidMount() {
       fetch('/api/v1/posts')
-
       .then(posts => posts.json())
       .then(posts => {
           this.setState({
               posts: posts
           })
-      })
+      });
   }
 
   renderPosts = () => {
+      console.log(this.state.posts);
       return this.state.posts.map(post => {
           return (
               <div key={post.id}>
@@ -41,8 +41,8 @@ class PostList extends Component {
                           {post.content}
                           <br/>
                           <br/>
-                          Likes: {post.likes}
-                          <PostLike post_id={post.id} likes={post.likes}/>
+
+                          <PostLike post_id={post.id} likes={post.likes} liked={post.liked}/>
 
                       </div>
 
