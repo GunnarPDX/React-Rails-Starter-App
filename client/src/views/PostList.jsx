@@ -42,6 +42,7 @@ class PostList extends Component {
                           <br/>
                           <br/>
 
+                          Views: {post.views}
                           <PostLike post_id={post.id} likes={post.likes} liked={post.liked}/>
 
                       </div>
@@ -61,7 +62,7 @@ class PostList extends Component {
           return (
               <div key={comment.id}>
 
-                  <div class="comment-box">
+                  <div className="comment-box">
                       <div className="orange-info">By: {comment.user_name}</div>
                       <br/>
                       {comment.content}

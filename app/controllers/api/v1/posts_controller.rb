@@ -4,13 +4,13 @@ module Api
   module V1
     class PostsController < ApplicationController
       before_action :set_post, only: %i[show like unlike]
-      before_action :find_liked, only: %i[index]
+      before_action :find_likes, only: %i[index]
 
       impressionist actions: [:show], unique: %i[impressionable_type impressionable_id session_hash]
 
       def index
         if user_signed_in?
-          render json: @posts_w_liked
+          render json: @posts_w_liked, each_serializer: PostWLikedSerializer
         else
           render json: {}, status: 401
         end
@@ -18,7 +18,7 @@ module Api
 
       def liked_posts
         if user_signed_in?
-          # render json: current_user.find_up_voted_items
+          # render json: current_user.find_liked_items
         else
           render json: {}, status: 401
         end
@@ -66,7 +66,7 @@ module Api
         @post = Post.find(params[:id])
       end
 
-      def find_liked
+      def find_likes
         @posts_w_liked = []
         posts = Post.all
         posts.each do |p|

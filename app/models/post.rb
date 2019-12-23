@@ -8,7 +8,12 @@ class Post < ApplicationRecord
   acts_as_votable
 
   def likes
-    self.get_likes.size
+    cached_votes_up # uses cached data
+    # self.get_likes.size
+  end
+
+  def views
+    self.impressionist_count
   end
 
   # delegate :username, to: :user
