@@ -34,7 +34,7 @@ class CommentPrompt extends Component {
             resp.json()
         })
         .then(post => {
-                window.location.reload(false);
+                window.location.reload(false); {/* This should call function to update props in parent instead */}
         });
 
     };

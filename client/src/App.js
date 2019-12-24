@@ -6,6 +6,7 @@ import NewPost from './views/NewPost';
 import About from './views/About';
 import UserProfile from "./views/UserProfile";
 import Navigation from "./components/Navigation";
+import ShowPost from "./views/ShowPost"
 
 import './App.css';
 
@@ -24,6 +25,7 @@ function App() {
         <Route exact path="/posts/new" component={NewPost} />
         <Route exact path="/about" component={About} />
         <Route exact path="/profile" component={UserProfile} />
+        <Route exact path="/show/post/:id" component={ShowPost} />
 
       </div>
     </Router>

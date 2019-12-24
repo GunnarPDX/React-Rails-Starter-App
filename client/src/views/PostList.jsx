@@ -6,7 +6,7 @@ import PostLike from '../components/PostLike'
 class PostList extends Component {
 
   state = {
-    posts: [], comments: []
+    posts: []
   };
 
   componentDidMount() {
@@ -42,13 +42,24 @@ class PostList extends Component {
                           <br/>
                           <br/>
 
+
+                          <Link to={`/show/post/${post.id}`} >
+                                  Link
+                          </Link>
+
+
+                          <br/>
+                          <br/>
+
                           Views: {post.views}
                           <PostLike post_id={post.id} likes={post.likes} liked={post.liked}/>
 
                       </div>
 
+                      {/*
                       <CommentPrompt post_id={post.id}/>
                       {this.renderComments(post)}
+                      */}
 
                   </div>
 
