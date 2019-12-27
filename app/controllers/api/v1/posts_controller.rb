@@ -28,7 +28,6 @@ module Api
       def show
         if user_signed_in?
           render json: @post
-          impressionist(@post)
         else
           render json: {}, status: 401
         end
@@ -101,7 +100,6 @@ module Api
       def find_likes
         @post_w_liked = []
         post = Post.find(params[:id])
-        impressionist(post)
 
         liked = if current_user.liked? post
                   'liked'
