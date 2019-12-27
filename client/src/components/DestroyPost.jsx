@@ -4,7 +4,12 @@ class DestroyPost extends Component {
 
     constructor(props) {
         super(props);
+        let bool = false;
+        if(this.props.owner === 'true'){
+            bool = true;
+        }
         this.state = {
+            owner: bool,
             post_id: this.props.post_id
         };
         this.handleClick = this.handleClick.bind(this);
@@ -31,11 +36,16 @@ class DestroyPost extends Component {
     }
 
     render() {
-        return (
-            <div>
-                <button className="btn btn-primary" onClick={this.handleClick}>Delete</button>
-            </div>
-        )
+        if(this.state.owner) {
+            return (
+                <div>
+                    <button className="btn btn-primary" onClick={this.handleClick}>Delete</button>
+                </div>
+            )
+        }
+        else{
+            return null
+        }
     }
 
 }

@@ -46,12 +46,11 @@ class ShowPost extends Component {
                             <br/>
                             {post.content}
                             <br/>
-
                             <br/>
 
                             Views: {post.views}
                             <PostLike post_id={post.id} likes={post.likes} liked={post.liked}/>
-                            <DestroyPost post_id={post.id} history={this.props.history}/>
+                            <DestroyPost post_id={post.id} owner={post.owner} history={this.props.history}/>
 
 
                         </div>

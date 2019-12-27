@@ -5,7 +5,7 @@ module Api
     class PostsController < ApplicationController
       before_action :set_post, only: %i[like destroy]
       before_action :find_likes_for_posts, only: %i[index]
-      before_action :find_likes, only: %i[show]
+      before_action :find_post_data, only: %i[show]
 
       impressionist actions: [:show], unique: %i[impressionable_type impressionable_id session_hash]
 
@@ -28,9 +28,8 @@ module Api
 
       def show
         if user_signed_in?
-          logger.debug @post_w_liked.liked.present?
-          puts @post_w_liked.liked
-          render json: @post_w_liked, serializer: PostWLikedSerializer
+          logger.debug @post_w_data.liked.present?
+          render json: @post_w_data, serializer: PostWLikedSerializer
         else
           render json: {}, status: 401
         end
@@ -91,16 +90,26 @@ module Api
                   else
                     'unliked'
                   end
+
+          owner = if current_user.id == p.user.id
+                    'true'
+                  else
+                    'false'
+                  end
+
           class << p
             attr_accessor :liked
+            attr_accessor :owner
           end
           p.liked = liked
+          p.owner = owner
+
           @posts_w_liked << p
         end
         @posts_w_liked
       end
 
-      def find_likes
+      def find_post_data
         post = Post.find(params[:id])
 
         liked = if current_user.liked? post
@@ -108,12 +117,21 @@ module Api
                 else
                   'unliked'
                 end
+
+        owner = if current_user.id == post.user.id
+                  'true'
+                else
+                  'false'
+                end
+
         class << post
           attr_accessor :liked
+          attr_accessor :owner
         end
         post.liked = liked
+        post.owner = owner
 
-        @post_w_liked = post
+        @post_w_data = post
       end
 
       def post_params
