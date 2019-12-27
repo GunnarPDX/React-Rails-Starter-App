@@ -16,10 +16,10 @@ Rails.application.routes.draw do
     resources :comments, only: [:create]
     end
   end
+
   devise_for :users
   get 'welcome/home'
   get '/app', to: 'welcome#app', as: 'app'
   root 'welcome#home'
-
   match '*path', to: 'welcome#app', via: :all
 end

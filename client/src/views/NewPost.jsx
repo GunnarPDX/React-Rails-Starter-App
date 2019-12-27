@@ -32,9 +32,9 @@ class NewPost extends Component {
       .then(resp => {
           resp.json()
       })
-      .then(
+      .then(resp => {
           this.props.history.push('/')
-      );
+      });
   };
 
   contentBoxStyle = {
@@ -68,7 +68,6 @@ class NewPost extends Component {
           </form>
       )
   }
-
 }
 
 export default NewPost

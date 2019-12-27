@@ -19,6 +19,7 @@ module Api
       def liked_posts
         if user_signed_in?
           # render json: current_user.find_liked_items
+          render json: {}, status: 501
         else
           render json: {}, status: 401
         end
@@ -40,7 +41,7 @@ module Api
           else
             @post.liked_by current_user
           end
-          render json: {}, status: :created
+          render json: {}, status: 200
         else
           render json: {}, status: 401
         end
@@ -51,7 +52,7 @@ module Api
           if (post = current_user.posts.create(post_params))
             post.time = Time.now.to_formatted_s(:long_ordinal)
             post.save
-            render json: post, status: :created
+            render json: post, status: 201
           else
             render json: post.errors, status: 400
           end
@@ -64,6 +65,9 @@ module Api
         if user_signed_in?
           if current_user.id == @post.user.id
             @post.destroy!
+            render json: {}, status: 202
+          else
+            render json: {}, status: 403
           end
         else
           render json: {}, status: 401
