@@ -50,7 +50,7 @@ class ShowPost extends Component {
 
                             Views: {post.views}
                             <PostLike post_id={post.id} likes={post.likes} liked={post.liked}/>
-                            <DestroyPost post_id={post.id}/>
+                            <DestroyPost post_id={post.id} history={this.props.history}/>
 
 
                         </div>
