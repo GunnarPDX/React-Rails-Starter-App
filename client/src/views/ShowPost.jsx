@@ -46,6 +46,7 @@ class ShowPost extends Component {
                             <br/>
                             {post.content}
                             <br/>
+
                             <br/>
 
                             Views: {post.views}
