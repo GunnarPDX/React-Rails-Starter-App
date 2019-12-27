@@ -32,9 +32,9 @@ class NewPost extends Component {
       .then(resp => {
           resp.json()
       })
-      .then(post => {
-          this.props.history.push('/');
-      });
+      .then(
+          this.props.history.push('/')
+      );
   };
 
   contentBoxStyle = {

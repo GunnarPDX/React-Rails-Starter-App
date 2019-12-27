@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import CommentPrompt from '../components/CommentPrompt'
 import PostLike from '../components/PostLike'
+import DestroyPost from '../components/DestroyPost'
 
 class ShowPost extends Component {
 
@@ -49,6 +50,8 @@ class ShowPost extends Component {
 
                             Views: {post.views}
                             <PostLike post_id={post.id} likes={post.likes} liked={post.liked}/>
+                            <DestroyPost post_id={post.id}/>
+
 
                         </div>
 

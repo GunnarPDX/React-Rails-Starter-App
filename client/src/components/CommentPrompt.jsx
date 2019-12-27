@@ -30,12 +30,12 @@ class CommentPrompt extends Component {
             redirect: "error",
             body: JSON.stringify(this.state)
         })
-        .then(resp => {
-            resp.json()
-        })
-        .then(post => {
+            .then(resp => {
+                resp.json()
+            })
+            .then(post => {
                 window.location.reload(false); {/* This should call function to update props in parent instead */}
-        });
+            });
 
     };
 
