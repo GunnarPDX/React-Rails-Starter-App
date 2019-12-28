@@ -4,7 +4,7 @@ module Api
   module V1
     class PostsController < ApplicationController
       before_action :set_post, only: %i[like destroy]
-      before_action :find_likes_for_posts, only: %i[index]
+      before_action :find_data_for_posts, only: %i[index]
       before_action :find_post_data, only: %i[show]
 
       impressionist actions: [:show], unique: %i[impressionable_type impressionable_id session_hash]
@@ -81,30 +81,11 @@ module Api
         @post = Post.find(params[:id])
       end
 
-      def find_likes_for_posts
+      def find_data_for_posts
         @posts_w_liked = []
         posts = Post.all
         posts.each do |p|
-          liked = if current_user.liked? p
-                    'liked'
-                  else
-                    'unliked'
-                  end
-
-          owner = if current_user.id == p.user.id
-                    'true'
-                  else
-                    'false'
-                  end
-
-          class << p
-            attr_accessor :liked
-            attr_accessor :owner
-          end
-          p.liked = liked
-          p.owner = owner
-
-          @posts_w_liked << p
+          add_user_data_to_posts(p)
         end
         @posts_w_liked
       end
@@ -124,14 +105,45 @@ module Api
                   'false'
                 end
 
+        session_user_id = current_user.id
+
         class << post
           attr_accessor :liked
           attr_accessor :owner
+          attr_accessor :session_user_id
         end
         post.liked = liked
         post.owner = owner
+        post.session_user_id = session_user_id
 
         @post_w_data = post
+      end
+
+      def add_user_data_to_posts(post)
+        liked = if current_user.liked? post
+                  'liked'
+                else
+                  'unliked'
+                end
+
+        owner = if current_user.id == post.user.id
+                  'true'
+                else
+                  'false'
+                end
+
+        session_user_id = current_user.id
+
+        class << post
+          attr_accessor :liked
+          attr_accessor :owner
+          attr_accessor :session_user_id
+        end
+        post.liked = liked
+        post.owner = owner
+        post.session_user_id = session_user_id
+
+        @posts_w_liked << post
       end
 
       def post_params

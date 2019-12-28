@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import CommentPrompt from '../components/CommentPrompt'
 import PostLike from '../components/PostLike'
 import DestroyPost from '../components/DestroyPost'
+import DestroyComment from "../components/DestroyComment";
 
 class ShowPost extends Component {
 
@@ -74,6 +75,8 @@ class ShowPost extends Component {
                         <div className="orange-info">By: {comment.user_name}</div>
                         <br/>
                         {comment.content}
+                        <br/>
+                        <DestroyComment session_user_id={post.session_user_id} owner_id={comment.user_id} comment_id={comment.id} history={this.props.history}/>
                     </div>
 
                 </div>

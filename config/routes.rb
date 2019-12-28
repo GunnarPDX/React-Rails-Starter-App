@@ -13,7 +13,7 @@ Rails.application.routes.draw do
         get '/posts', to: 'user#posts'
       end
     end
-    resources :comments, only: [:create]
+    resources :comments, only: %i[create destroy]
     end
   end
 
