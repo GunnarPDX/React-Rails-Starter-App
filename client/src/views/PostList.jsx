@@ -44,15 +44,23 @@ class PostList extends Component {
 
 
                           <Link to={`/show/post/${post.id}`} >
-                                  Link
+                              <div className="view-post-button">
+                                  View
+                              </div>
                           </Link>
 
 
                           <br/>
-                          <br/>
 
-                          Views: {post.views}
-                          <PostLike post_id={post.id} likes={post.likes} liked={post.liked}/>
+                          <div className="options-container">
+                              <div className="post-options">
+                                  <img src={'https://res.cloudinary.com/dmqtrnawm/image/upload/v1577651882/UserFluent/views_u3muat.png'} alt={'views'}/>
+                                  {post.views}
+                              </div>
+                              <div className="post-options">
+                                  <PostLike post_id={post.id} likes={post.likes} liked={post.liked}/>
+                              </div>
+                          </div>
 
                       </div>
 

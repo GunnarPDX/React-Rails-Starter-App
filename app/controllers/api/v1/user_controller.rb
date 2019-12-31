@@ -12,6 +12,11 @@ module Api
         end
       end
 
+      def show
+        user = User.find(params[:id])
+        render json: user
+      end
+
       def posts
         if user_signed_in?
           render json: current_user.posts

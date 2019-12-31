@@ -28,3 +28,15 @@
         
     --> visit http://localhost:3000/
     --> visit http://localhost:3000/admin   (for the admin pannel)
+
+
+* Todo
+
+    - Pass function into components to update post/comment state upon insertion/removal
+    - Rework CSS and add icons
+    - Improve users profile page
+        - add settings page for user
+        - add profile pages for other users
+    - Improve login pages / add login to react app
+    - Allow non-users to view content
+    - ...

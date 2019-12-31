@@ -79,6 +79,7 @@ li a:hover {
 }
 
 .post-box{
+  display: table;
   padding: 10px;
   margin: 10px auto;
   border: 1px solid #EFEFEF;
@@ -130,6 +131,19 @@ h5 {
   color: white;
 }
 
+.view-post-button{
+  padding: 5px;
+  margin: auto;
+  width: 60px;
+  background-color: #333;
+  border: 1px solid #3e3d3f;
+  border-radius: 4px;
+
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+
 .new-post-button:hover {
   background-color: #111;
 }
@@ -150,4 +164,17 @@ h5 {
 .text-area{
   width: 90%;
   resize:none;
+}
+
+.options-container{
+  padding: 0;
+  margin: 0;
+}
+
+.post-options {
+  color: coral;
+  padding: 5px 10px;
+  margin: 0 10px;
+  display: inline;
+  float: left;
 }
