@@ -55,7 +55,7 @@ $ rspec
 ```
 ## To-do
 
-[checkbox:unchecked] Pass function into components to update post/comment state upon insertion/removal
+    - Pass function into components to update post/comment state upon insertion/removal
     - Improve users profile page
         - add settings page for user
         - add profile pages for other users
