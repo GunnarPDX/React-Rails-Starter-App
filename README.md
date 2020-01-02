@@ -9,7 +9,17 @@ and build on it, if you want to contribute just fork it and create a pull reques
 ## Specs
     
 
-``` Ruby 2.6.1 ``` - ```Rails 5.2.3``` - ```Postgres db``` - ``React frontend`` - ```Devise for user accounts/authentication``` - ```Active_Admin for admin accounts```
+``` Ruby 2.6.1 ```
+
+```Rails 5.2.3```
+
+```Postgres db```
+
+``React frontend``
+
+```Devise for user accounts/authentication```
+
+```Active_Admin for admin accounts```
 
 ## Setup
 
