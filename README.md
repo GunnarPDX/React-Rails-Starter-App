@@ -1,18 +1,13 @@
-#Readme
-* About
-    - A simple React on Rails starter app with Devise user accounts and
+# Readme
+## About
+    A simple React on Rails starter app with Devise user accounts and
     active admin for site management. Feel free to mess around with this
-     and build on it. 
+    and build on it. 
     
-* Specs
+## Specs
     
 
-    - Ruby 2.6.1
-    - Rails 5.2.3
-    - Postgres db
-    - React frontend
-    - Devise for user accounts/authentication
-    - Active_Admin for admin accounts
+``` Ruby 2.6.1 ``` - ```Rails 5.2.3``` - ```Postgres db``` - ``React frontend`` - ```Devise for user accounts/authentication``` - ```Active_Admin for admin accounts```
 
 * Setup
 
