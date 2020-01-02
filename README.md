@@ -1,8 +1,9 @@
 # Readme
+![Image of app](https://res.cloudinary.com/dmqtrnawm/image/upload/v1577935317/react-rails-starter-app/starter-app_nu5ats.png)
 ## About
-    A simple React on Rails starter app with Devise user accounts and
-    active admin for site management. Feel free to mess around with this
-    and build on it. 
+A simple React on Rails starter app with Devise user accounts and
+active admin for site management. Feel free to mess around with this
+and build on it. 
     
 ## Specs
     
@@ -37,7 +38,10 @@ In two separate terminals run:
 --> visit http://localhost:3000/admin   (for the admin pannel)
 ```
 
-
+## Testing
+```
+$ rspec
+```
 ## Todo
 
     - Pass function into components to update post/comment state upon insertion/removal
