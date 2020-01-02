@@ -53,13 +53,11 @@ In two separate terminals run:
 ```
 $ rspec
 ```
-## Todo
+## To-do
 
-    - Pass function into components to update post/comment state upon insertion/removal
-    - Rework CSS and add icons
+[checkbox:unchecked] Pass function into components to update post/comment state upon insertion/removal
     - Improve users profile page
         - add settings page for user
         - add profile pages for other users
-    - Improve login pages / add login to react app
     - Allow non-users to view content
     - ...

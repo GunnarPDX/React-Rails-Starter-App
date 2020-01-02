@@ -73,6 +73,8 @@ GEM
     bootsnap (1.4.5)
       msgpack (~> 1.0)
     builder (3.2.4)
+    bulma-sass (0.7.5.1)
+      sass (~> 3.2)
     byebug (11.0.1)
     case_transform (0.2)
       activesupport
@@ -156,7 +158,7 @@ GEM
     nokogiri (1.10.7)
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
-    pg (1.1.4)
+    pg (1.2.0)
     polyamorous (2.3.0)
       activerecord (>= 5.0)
     puma (4.3.1)
@@ -198,7 +200,7 @@ GEM
       i18n
       polyamorous (= 2.3.0)
     rb-fsevent (0.10.3)
-    rb-inotify (0.10.0)
+    rb-inotify (0.10.1)
       ffi (~> 1.0)
     responders (3.0.0)
       actionpack (>= 5.0)
@@ -221,8 +223,11 @@ GEM
       rspec-support (~> 3.9.0)
     rspec-support (3.9.2)
     ruby_dep (1.5.0)
-    sass-rails (6.0.0)
-      sassc-rails (~> 2.1, >= 2.1.1)
+    sass (3.7.4)
+      sass-listen (~> 4.0.0)
+    sass-listen (4.0.0)
+      rb-fsevent (~> 0.9, >= 0.9.4)
+      rb-inotify (~> 0.9, >= 0.9.7)
     sassc (2.2.1)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
@@ -253,7 +258,7 @@ GEM
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
-    tzinfo (1.2.5)
+    tzinfo (1.2.6)
       thread_safe (~> 0.1)
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
@@ -282,6 +287,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootsnap (>= 1.1.0)
+  bulma-sass
   byebug
   coffee-rails
   devise
@@ -292,7 +298,7 @@ DEPENDENCIES
   puma
   rails (= 5.2.3)
   rspec-rails
-  sass-rails
+  sassc
   simplecov
   spring
   spring-watcher-listen (~> 2.0.0)

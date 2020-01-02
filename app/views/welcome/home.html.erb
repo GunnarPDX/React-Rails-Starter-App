@@ -1,10 +1,22 @@
-<nav style="text-align: right">
-<% if user_signed_in? %>
-    <%= link_to('Logout', destroy_user_session_path, method: :delete) %>          
-  <% else %>
-    <%= link_to('Login', new_user_session_path)  %> |
-    <%= link_to('Sign Up', new_user_registration_path)  %>  
-  <% end %>
-</nav>
-<h1>Welcome#home</h1>
-<p>If you're logged in, check out <%= link_to "the app", app_path %>!</p>
+<div class="columns is-mobile is-centered">
+  <div style="height: 50px;"></div>
+</div>
+<div class="columns is-mobile is-centered">
+  <div class="column content-box is-one-quarter has-text-centered">
+    <div class="is-primary">
+
+      <nav>
+      <% if user_signed_in? %>
+          <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+        <% else %>
+          <%= link_to('Login', new_user_session_path)  %> |
+          <%= link_to('Sign Up', new_user_registration_path)  %>
+        <% end %>
+      </nav>
+      <br>
+      <br>
+      <p>If you're logged in, <%= link_to "click here", app_path %></p>
+
+    </div>
+  </div>
+</div>

@@ -31,7 +31,7 @@ class DestroyPost extends Component {
             .then(res => res.text())
             .then(res => console.log(res))
             .then(res => {
-                window.location.reload(false); {/* This should call function to update props in parent instead */}
+                this.props.history.push('/')
             });
     }
 
