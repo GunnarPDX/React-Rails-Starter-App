@@ -2,8 +2,9 @@
 ![Image of app](https://res.cloudinary.com/dmqtrnawm/image/upload/v1577935317/react-rails-starter-app/starter-app_nu5ats.png)
 ## About
 A simple React on Rails starter app with Devise user accounts and
-active admin for site management. Feel free to mess around with this
-and build on it. 
+active admin for site management. The app serves as a simple forum/chat-app
+/blog where users can create posts and comment on them. Feel free to mess around with this
+and build on it, if you want to contribute just fork it and create a pull request. 
     
 ## Specs
     
