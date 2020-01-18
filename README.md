@@ -4,7 +4,7 @@
 A simple React on Rails starter app with Devise user accounts and
 active admin for site management. The app serves as a simple forum/chat-app
 /blog where users can create posts and comment on them. Feel free to mess around with this
-and build on it, if you want to contribute just fork it and create a pull request. 
+, hack it and build on top of it. If you want to contribute just fork it and create a pull request.  License is MIT. 
     
 ## Specs
     
